@@ -1,0 +1,48 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║          🎯 PLACE YOUR TRAINED MODEL FILE HERE! 🎯               ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📍 EXACT LOCATION REQUIRED:
+   backend/models/melanoma_classifier.pth
+
+🔧 CURRENT STATUS:
+   ❌ No model file found - Running in DEMO MODE
+
+📋 REQUIREMENTS:
+   • File name: melanoma_classifier.pth (exact)
+   • Format: PyTorch checkpoint (.pth)
+   • Architecture: MultiTaskMelanomaNet (see network.py)
+
+💾 CHECKPOINT FORMAT:
+   Your .pth file should contain:
+   {
+       'model_state_dict': <trained model weights>,
+       'epoch': <optional>,
+       'loss': <optional>
+   }
+
+📖 HOW TO CREATE:
+   After training your model:
+   
+   checkpoint = {
+       'model_state_dict': model.state_dict(),
+       'epoch': final_epoch,
+       'loss': final_loss
+   }
+   torch.save(checkpoint, 'melanoma_classifier.pth')
+
+🚀 AFTER PLACING MODEL:
+   1. Put melanoma_classifier.pth in this directory
+   2. Restart the backend: docker-compose restart backend
+   3. Check logs: docker-compose logs backend
+   4. Look for "Model loaded successfully" message
+
+🎮 DEMO MODE:
+   Without a model, the system generates simulated predictions
+   for demonstration and testing purposes.
+
+❓ NEED HELP?
+   See README.md in this directory for more details
+
